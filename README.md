@@ -4,16 +4,6 @@ Mon portfolio de développeur full stack junior, en anglais et en français.
 
 **En ligne :** https://dionecena.github.io/Modern-Portfolio/
 
-## Ce qu'il contient
-
-- **Intro animée** : le E roule, les lettres tombent pour former DIONECENA, puis se changent en PORTFOLIO.
-- **Portrait en particules** qui réagit à la souris et au doigt.
-- **Projets** : Dakar Slush'D, Yónne, MediConsult, Opa H Academy, EduConnect, Cruyff Academy, Garde d'enfants.
-- **Parcours, services et stack** : formation, hackathons, expérience.
-- **Mini-jeu casse-briques « HELLO WORLD »** avec 3 vies.
-- **CV à télécharger** en français ou en anglais, selon la langue du site.
-- **Bouton EN / FR** : la langue choisie est mémorisée.
-
 ## Stack
 
 React 18 · Vite 6 · Tailwind CSS 4 · Canvas 2D (aucune autre dépendance)
