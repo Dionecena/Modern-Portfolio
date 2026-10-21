@@ -54,6 +54,7 @@ export const ui = {
   whatsapp: { en: 'Message on WhatsApp', fr: 'Écrire sur WhatsApp' },
   sendEmail: { en: 'Send an email', fr: 'Envoyer un email' },
   cv: { en: 'Download my CV', fr: 'Télécharger mon CV' },
+  cvFile: { en: 'cv-en.pdf', fr: 'cv-fr.pdf' }, // générés par cv/build.sh
   phone: { en: 'Phone', fr: 'Téléphone' },
   basedIn: { en: 'Based in', fr: 'Basé à' },
   rights: { en: 'All rights reserved.', fr: 'Tous droits réservés.' },

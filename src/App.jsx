@@ -240,7 +240,8 @@ function Game() {
   return (
     <section className="px-5 py-24 md:px-10 md:py-32">
       <p className="mb-10 inline-block border-b border-white/60 pb-1 text-sm tracking-wide">{t(ui.game)}</p>
-      <div className="mx-auto max-w-4xl"><Breakout labels={{ play: t(ui.play), drag: t(ui.drag), aria: t(ui.gameLabel) }} /></div>
+      {/* sur ordi, le jeu + son bouton tiennent dans la hauteur de l'écran (canvas 31/22) */}
+      <div className="mx-auto max-w-4xl md:max-w-[min(48rem,calc((100svh_-_16rem)*31/22))]"><Breakout labels={{ play: t(ui.play), drag: t(ui.drag), aria: t(ui.gameLabel) }} /></div>
     </section>
   )
 }
@@ -263,7 +264,7 @@ function Contact() {
           <div className="flex flex-col items-start gap-3">
             <a href={`https://wa.me/${profile.phoneRaw}`} target="_blank" rel="noopener" className="rounded-full bg-sand px-6 py-3 text-black hover:bg-white">{t(ui.whatsapp)} <Arrow /></a>
             <a href={`mailto:${profile.email}`} className="rounded-full border border-white/20 px-6 py-3 hover:bg-white/10">{t(ui.sendEmail)} ✉</a>
-            <a href="cv.pdf" download="CV-Moussa-Dione.pdf" className="rounded-full border border-white/20 px-6 py-3 hover:bg-white/10">{t(ui.cv)} ↓</a>
+            <a href={t(ui.cvFile)} download={`CV-Moussa-Dione-${t(ui.cvFile).slice(3, 5).toUpperCase()}.pdf`} className="rounded-full border border-white/20 px-6 py-3 hover:bg-white/10">{t(ui.cv)} ↓</a>
           </div>
         </div>
         <div className="self-end rounded-3xl border border-white/5 bg-card/80 backdrop-blur">
@@ -281,7 +282,6 @@ function Contact() {
       </div>
       <footer className="relative mt-24 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/40 md:flex-row md:justify-between">
         <div className="flex flex-wrap items-center gap-5">{nav.slice(0, 5).map(([h, l]) => <a key={h} href={h} className="hover:text-white">{t(l)}</a>)}</div>
-        <Socials className="md:order-last" />
         <p>© {new Date().getFullYear()} Moussa Dione. {t(ui.rights)}</p>
       </footer>
     </section>
