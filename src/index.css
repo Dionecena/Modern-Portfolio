@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter Tight", system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --color-ink: #0a0a0a;
+  --color-card: #121212;
+  --color-sand: #d6d0c2;
+}
+
+html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+body { background: var(--color-ink); color: #f2f2f2; font-family: var(--font-sans); overflow-x: hidden; }
+::selection { background: var(--color-sand); color: #000; }
+
+/* Titres « métal » : dégradé vertical + petite ombre portée pour le relief */
+.metal {
+  font-weight: 900; letter-spacing: -0.045em; line-height: .9;
+  background: linear-gradient(180deg, #fff 0%, #e6e6e6 38%, #8d8d8d 62%, #d9d9d9 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 2px 0 rgba(0,0,0,.65)) drop-shadow(0 8px 24px rgba(255,255,255,.06));
+}
+.serif { font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: 0; }
+.label { font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: #6f6f6f; }
+
+/* Défilement infini des pastilles de la stack */
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee { animation: marquee var(--dur, 40s) linear infinite; }
+.marquee.rev { animation-direction: reverse; }
+
+/* Apparition au défilement */
+.reveal { opacity: 0; transform: translateY(32px); filter: blur(6px); transition: opacity 1s, transform 1s, filter 1s; }
+.reveal.in { opacity: 1; transform: none; filter: none; }
+
+/* Intro : lettres qui basculent en 3D */
+@keyframes flip-in { from { transform: rotateX(-100deg) translateY(.4em); opacity: 0; } to { transform: none; opacity: 1; } }
+.flip { display: inline-block; transform-origin: 50% 100%; animation: flip-in .55s cubic-bezier(.2,.8,.2,1) both; }
+/* Intro : le E arrive de la droite en roulant sur lui-même, puis se cale */
+@keyframes roll {
+  0%   { transform: translateX(70vw) rotate(540deg); opacity: 0; }
+  15%  { opacity: 1; }
+  82%  { transform: translateX(-.06em) rotate(-10deg); }
+  100% { transform: none; }
+}
+/* Intro : les lettres tombent du haut en tournoyant (--rot) et rebondissent légèrement */
+@keyframes tumble {
+  0%   { transform: translateY(-75vh) rotate(var(--rot)); opacity: 0; }
+  12%  { opacity: 1; }
+  70%  { transform: translateY(0) rotate(calc(var(--rot) * -.15)); }
+  85%  { transform: translateY(-.08em) rotate(0); }
+  100% { transform: none; }
+}
+/* Fumée animée derrière le contact */
+@keyframes drift { 50% { transform: translate(6%, -4%) scale(1.15); } }
+.smoke { background: radial-gradient(closest-side, rgba(255,255,255,.07), transparent); filter: blur(40px); animation: drift 18s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee, .smoke { animation: none; }
+  .reveal { opacity: 1; transform: none; filter: none; }
+  html { scroll-behavior: auto; }
+}

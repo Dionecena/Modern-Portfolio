@@ -1,0 +1,11 @@
+node_modules/
+dist/
+# Anciens portfolios et vidéo de référence : sources pour le contenu, à ne pas publier
+Portfolio/
+Portfolio11-main/
+portfolio.mp4
+captures/
+
+# Config locale et fond d'écran non utilisé
+.claude/
+fondecran.jpeg
