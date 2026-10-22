@@ -193,6 +193,8 @@ function Parcours() {
   )
 }
 
+const touch = matchMedia('(hover: none)').matches
+
 function Projects() {
   const t = useT()
   const [a, b] = t(ui.workTitle)
@@ -221,7 +223,8 @@ function Projects() {
               <p className="mb-7 leading-relaxed text-white/55">{t(p.text)}</p>
               <div className="flex flex-wrap gap-3">
                 {p.links.map(([l, h], k) => (
-                  <a key={h} href={h} target="_blank" rel="noopener"
+                  // sur tactile, même onglet : les navigateurs intégrés aux applis ignorent souvent target=_blank
+                  <a key={h} href={h} target={touch ? undefined : '_blank'} rel="noopener"
                      className={`rounded-full px-5 py-2.5 text-sm ${k ? 'border border-white/20 hover:bg-white/10' : 'bg-sand text-black hover:bg-white'}`}>
                     {t(l)} <Arrow />
                   </a>
