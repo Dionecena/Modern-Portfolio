@@ -121,7 +121,7 @@ export const parcours = [
   ] },
 ]
 
-// Projets mis en avant, dans l'ordre voulu. Slush'D en tête : seul projet avec démo (son dépôt est privé), GitHub pour les autres.
+// Projets mis en avant, dans l'ordre voulu. Bouton démo d'abord quand il y en a une, puis GitHub (dépôt Slush'D privé : démo seule).
 export const projects = [
   { n: '01', tag: { en: 'Hackathon finalist', fr: 'Finaliste hackathon' }, title: "Slush'D", accent: 'dakar',
     sub: { en: 'Museum of Black Civilizations', fr: 'Musée des Civilisations noires' },
@@ -139,13 +139,13 @@ export const projects = [
     text: { en: 'Pre-consultation and appointment booking platform for a private clinic in Dakar. Patients book real available slots, describe their symptoms and get an indicative orientation; secretaries manage the doctors’ schedules.',
             fr: 'Plateforme de préconsultation et de prise de rendez-vous pour une clinique privée de Dakar. Les patients réservent de vrais créneaux, décrivent leurs symptômes et reçoivent une orientation indicative ; le secrétariat gère le planning des médecins.' },
     tech: ['Laravel 12', 'Sanctum', 'PostgreSQL', 'React 18', 'TypeScript', 'Tailwind'],
-    links: [['GitHub', 'https://github.com/Dionecena/Final-Year-Project-Defense']] },
+    links: [[{ en: 'Live demo', fr: 'Voir la démo' }, 'https://mediconsult-hazel.vercel.app/'], ['GitHub', 'https://github.com/Dionecena/Final-Year-Project-Defense']] },
   { n: '04', tag: 'Full stack', title: 'Opa H', accent: 'academy',
     sub: { en: 'German learning platform', fr: "Plateforme d'apprentissage de l'allemand" },
     text: { en: 'A1-level German exam practice with collaborative features: exercises by theme, text and audio submissions, comments, and scheduled clean-up jobs.',
             fr: "Préparation à l'examen d'allemand A1 avec des fonctions collaboratives : exercices par thème, réponses texte et audio, commentaires et nettoyage automatique planifié." },
     tech: ['React 18', 'Node.js', 'Express', 'Prisma', 'PostgreSQL'],
-    links: [['GitHub', 'https://github.com/Dionecena/Opa-H-Academy']], img: opah },
+    links: [[{ en: 'Live demo', fr: 'Voir la démo' }, 'https://opa-h-academy.netlify.app/'], ['GitHub', 'https://github.com/Dionecena/Opa-H-Academy']], img: opah },
   { n: '05', tag: { en: 'Hackathon winner', fr: 'Hackathon gagné' }, title: 'Edu', accent: 'connect',
     sub: { en: 'Education platform', fr: 'Plateforme éducative' },
     text: { en: 'A platform connecting students and teachers: online courses, real-time chat and progress tracking.',
